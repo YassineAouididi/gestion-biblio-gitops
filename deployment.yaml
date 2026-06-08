@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gestion-biblio-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gestion-biblio-app
+  template:
+    metadata:
+      labels:
+        app: gestion-biblio-app
+    spec:
+      containers:
+        - name: gestion-biblio-app
+          image: yescine0/gestion-bibliotheque:latest
+          resources:
+            limits:
+              cpu: "1"
+            requests:
+              cpu: "500m"
+          ports:
+            - containerPort: 5173
