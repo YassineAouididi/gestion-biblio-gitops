@@ -9,7 +9,7 @@ spec:
     app: gestion-biblio-app
 
   ports:
-    - port: 5172
-      targetPort: 5172
+    - port: 3000
+      targetPort: 3000
 
   type: LoadBalancer
